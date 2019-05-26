@@ -1,4 +1,4 @@
-from dict_utils import deflate
+from deflate_dict import deflate
 from .utils import test_dict
 
 def test_deflate():

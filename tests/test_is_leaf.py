@@ -1,4 +1,4 @@
-from dict_utils.is_leaf import is_leaf
+from deflate_dict.is_leaf import is_leaf
 
 def test_is_leaf():
     assert is_leaf("ghgh")

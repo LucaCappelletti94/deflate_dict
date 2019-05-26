@@ -1,5 +1,5 @@
-from dict_utils import inflate, deflate
+from deflate_dict import inflate, deflate
 from .utils import test_dict
 
 def test_inflate():
-    print(inflate(deflate(test_dict)))
+    inflate(deflate(test_dict))
