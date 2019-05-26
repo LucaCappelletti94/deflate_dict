@@ -25,7 +25,9 @@ A dictionary will be deflated down to its smallest non-further iterable elements
             {
                 "b":(0,1,2)
             },
-            "c": [1,2,3]
+            {
+                "c": [1,2,3]
+            }
         ]
     }
     result = deflate(D, sep="_")
