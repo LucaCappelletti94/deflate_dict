@@ -18,7 +18,40 @@ Since some software handling coverages sometime get slightly different results, 
 
 |coveralls| |sonar_coverage| |code_climate_coverage|
 
-AFTER
+Deflating a dictionary
+-------------------------------------------
+A dictionary will be deflated down to its smallest non-further iterable elements, defined as those not containing lists or dictionaries.
+
+.. code:: python
+
+    from deflate_dict import deflate
+    D = {
+        "a":[
+            {
+                "b":(0,1,2)
+            },
+            {
+                "c": [1,2,3]
+            }
+        ]
+    }
+    result = deflate(D, sep="_")
+
+    # {'a_0_b': (0, 1, 2), 'a_1_c': [1, 2, 3], 'd': 4}
+
+
+Inflate a dictionary
+---------------------------------------------
+To reinflate a dictionary to its forgotten glory, just go with:
+
+.. code:: python
+
+    from deflate_dict import inflate
+    D = {"a_0_b": (0, 1, 2), "a_1_c": [1, 2, 3], "d": 4}
+
+    result = inflate(D, sep="_")
+
+    # {'a': [{'b': (0, 1, 2)}, {'c': [1, 2, 3]}], 'd': 4}
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/deflate_dict.png
    :target: https://travis-ci.org/LucaCappelletti94/deflate_dict
