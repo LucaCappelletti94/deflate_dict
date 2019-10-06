@@ -73,12 +73,12 @@ To reinflate a dictionary to its forgotten glory, just go with:
     :target: https://coveralls.io/github/LucaCappelletti94/deflate_dict?branch=master
     :alt: Coveralls Coverage
 
-.. |pip| image:: https://badge.fury.io/py/deflate_dict.svg
-    :target: https://badge.fury.io/py/deflate_dict
+.. |pip| image:: https://badge.fury.io/py/deflate-dict.svg
+    :target: https://badge.fury.io/py/deflate-dict
     :alt: Pypi project
 
-.. |downloads| image:: https://pepy.tech/badge/deflate_dict
-    :target: https://pepy.tech/badge/deflate_dict
+.. |downloads| image:: https://pepy.tech/badge/deflate-dict
+    :target: https://pepy.tech/badge/deflate-dict
     :alt: Pypi total project downloads 
 
 .. |codacy|  image:: https://api.codacy.com/project/badge/Grade/ac52bf2f95bc4f6590f65bac9bc7fc60
