@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: deflate-dict
-Version: 1.0.1
+Version: 1.0.2
 Summary: Python package to deflate and re-inflate dictionaries.
 Home-page: https://github.com/LucaCappelletti94/deflate_dict
 Author: Luca Cappelletti
@@ -61,6 +61,11 @@ Description: deflate_dict
         
             # {'a': [{'b': (0, 1, 2)}, {'c': [1, 2, 3]}], 'd': 4}
         
+        Limitations
+        ----------------------------------------------
+        The library, as of version `1.0.2`, is unable to distinguish between reinflated numerical strings and actual numbers,
+        since to deflate the strings the library has to convert the numbers to strings.
+        
         .. |travis| image:: https://travis-ci.org/LucaCappelletti94/deflate_dict.png
            :target: https://travis-ci.org/LucaCappelletti94/deflate_dict
            :alt: Travis CI build
@@ -81,12 +86,12 @@ Description: deflate_dict
             :target: https://coveralls.io/github/LucaCappelletti94/deflate_dict?branch=master
             :alt: Coveralls Coverage
         
-        .. |pip| image:: https://badge.fury.io/py/deflate_dict.svg
-            :target: https://badge.fury.io/py/deflate_dict
+        .. |pip| image:: https://badge.fury.io/py/deflate-dict.svg
+            :target: https://badge.fury.io/py/deflate-dict
             :alt: Pypi project
         
-        .. |downloads| image:: https://pepy.tech/badge/deflate_dict
-            :target: https://pepy.tech/badge/deflate_dict
+        .. |downloads| image:: https://pepy.tech/badge/deflate-dict
+            :target: https://pepy.tech/badge/deflate-dict
             :alt: Pypi total project downloads 
         
         .. |codacy|  image:: https://api.codacy.com/project/badge/Grade/ac52bf2f95bc4f6590f65bac9bc7fc60
@@ -100,6 +105,7 @@ Description: deflate_dict
         .. |code_climate_coverage| image:: https://api.codeclimate.com/v1/badges/965dea01ed74fa710728/test_coverage
             :target: https://codeclimate.com/github/LucaCappelletti94/deflate_dict/test_coverage
             :alt: Code Climate Coverate
+        
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
 Classifier: License :: OSI Approved :: MIT License
