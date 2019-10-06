@@ -53,6 +53,11 @@ To reinflate a dictionary to its forgotten glory, just go with:
 
     # {'a': [{'b': (0, 1, 2)}, {'c': [1, 2, 3]}], 'd': 4}
 
+Limitations
+----------------------------------------------
+The library, as of version `1.0.2`, is unable to distinguish between reinflated numerical strings and actual numbers,
+since to deflate the strings the library has to convert the numbers to strings.
+
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/deflate_dict.png
    :target: https://travis-ci.org/LucaCappelletti94/deflate_dict
    :alt: Travis CI build

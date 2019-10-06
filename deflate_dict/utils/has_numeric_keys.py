@@ -7,4 +7,4 @@ def has_numeric_keys(my_dict:Dict)->bool:
     keys = set(my_dict.keys())
     return all(
         isinstance(k, int) for k in keys
-    ) and keys == set(range(max(keys)+1))
+    ) and min(keys)==0 and max(keys) == len(keys)-1 and keys == set(range(max(keys)+1))

@@ -5,9 +5,9 @@ from .list_to_dict import list_to_dict
 
 def _deflate(my_dict: Dict, sep="_", root="")->Generator:
     """Return deflated Dict."""
-    sep = sep if root else ""
+    separator = sep if root else ""
     for key, value in my_dict.items():
-        flatten_key = "{root}{sep}{key}".format(root=root, sep=sep, key=key)
+        flatten_key = "{root}{separator}{key}".format(root=root, separator=separator, key=key)
         if is_leaf(value):
             yield (flatten_key, value)
         else:

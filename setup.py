@@ -29,7 +29,7 @@ def find_version(*file_paths):
 
 __version__ = find_version("deflate_dict", "__version__.py")
 
-test_deps =["pytest", "pytest-cov", "coveralls", "validate_version_code", "codacy-coverage"]
+test_deps =["pytest", "pytest-cov", "coveralls", "validate_version_code", "codacy-coverage", "random_dict"]
 
 extras = {
     'test': test_deps,

@@ -4,16 +4,21 @@ from .dict_to_list import dict_to_list
 from .utils import has_numeric_keys
 
 
-def _to_int(value):
+def _to_number(value):
     try:
         return int(value)
     except ValueError:
-        return value
+        pass
+    try:
+        return float(value)
+    except ValueError:
+        pass
+    return value
 
 
 def restore_lists(my_dict: Dict)->Dict:
     restored = {
-        _to_int(k): v if is_leaf(v) else restore_lists(v) for k, v in my_dict.items()
+        _to_number(k): v if is_leaf(v) else restore_lists(v) for k, v in my_dict.items()
     }
 
     return dict_to_list(restored) if has_numeric_keys(restored) else restored
