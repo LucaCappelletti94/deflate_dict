@@ -13,4 +13,4 @@ def test_inflate_deflate():
         assert d == inflate(deflate(d))
 
     for d in dictionaries:
-        assert d == inflate(deflate(d, leave_tuples=True))
+        assert d == inflate(deflate(d, leave_tuples=True), leave_tuples=True)

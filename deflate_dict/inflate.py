@@ -1,42 +1,31 @@
 from typing import Dict
 from .is_leaf import is_leaf
-from .dict_to_list import dict_to_list
-from .utils import has_numeric_keys
+import sys
+import re
+from .utils import type_decode, is_encoded_list, decode_list
 
 
-def _to_number(value):
-    try:
-        return int(value)
-    except ValueError:
-        pass
-    try:
-        return float(value)
-    except ValueError:
-        pass
-    return value
-
-
-def restore_lists(my_dict: Dict)->Dict:
+def restore_lists(my_dict: Dict, leave_tuples:bool)->Dict:
     restored = {
-        _to_number(k): v if is_leaf(v) else restore_lists(v) for k, v in my_dict.items()
+        k: v if is_leaf(v) or leave_tuples and isinstance(v, tuple) else restore_lists(v, leave_tuples)
+        for k, v in my_dict.items()
     }
 
-    return dict_to_list(restored) if has_numeric_keys(restored) else restored
+    return decode_list(restored) if is_encoded_list(restored) else restored
 
-
-def inflate(my_dict: Dict, sep="_")->Dict:
+def inflate(my_dict: Dict, sep="_", leave_tuples=False)->Dict:
     """Return inflated Dict."""
     items = dict()
     for k, v in my_dict.items():
         keys = k.split(sep)
         sub_items = items
         for ki in keys[:-1]:
+            ki = type_decode(ki)
             try:
                 sub_items = sub_items[ki]
             except KeyError:
                 sub_items[ki] = dict()
                 sub_items = sub_items[ki]
 
-        sub_items[keys[-1]] = v
-
-    return restore_lists(items)
+        sub_items[type_decode(keys[-1])] = v
+    return restore_lists(items, leave_tuples=leave_tuples)
