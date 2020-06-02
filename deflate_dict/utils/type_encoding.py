@@ -25,7 +25,11 @@ def type_encode(my_object)->str:
 
 def type_decode(my_object:str):
     pattern = re.compile(r"^(\w+)\((.+)\)$")
-    object_class, value = pattern.findall(my_object)[0]
+    results = pattern.findall(my_object)
+    if not results:
+        # This happens only in the case of empty string "" being coded as str().
+        return ""
+    object_class, value = results[0]
     if object_class == "str":
         return value
     if object_class == "bool":

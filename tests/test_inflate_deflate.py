@@ -8,13 +8,15 @@ def test_inflate_deflate():
         random_int_dict(4, 4) for i in range(100)
     ] + [
         random_float_dict(4, 4) for i in range(100)
+    ] + [
+        random_string_dict(4, 4) for i in range(100)
     ]
     for d in dictionaries:
         assert d == inflate(deflate(d))
         assert d == inflate(deflate(d, leave_tuples=True), leave_tuples=True)
 
     string_dictionaries = [
-        {"test":{"test":{"test":[1,2,3,4]}}}
+        {"test": {"test": {"test": [1, 2, 3, 4]}}}
     ]
     for d in string_dictionaries:
         assert d == inflate(
