@@ -4,15 +4,14 @@ setup.py
 deflate_dict/__init__.py
 deflate_dict/__version__.py
 deflate_dict/deflate.py
-deflate_dict/dict_to_list.py
 deflate_dict/inflate.py
 deflate_dict/is_leaf.py
-deflate_dict/list_to_dict.py
 deflate_dict.egg-info/PKG-INFO
 deflate_dict.egg-info/SOURCES.txt
 deflate_dict.egg-info/dependency_links.txt
 deflate_dict.egg-info/requires.txt
 deflate_dict.egg-info/top_level.txt
 deflate_dict/utils/__init__.py
-deflate_dict/utils/has_numeric_keys.py
 deflate_dict/utils/is_iterable.py
+deflate_dict/utils/list_encoding.py
+deflate_dict/utils/type_encoding.py
