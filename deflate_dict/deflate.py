@@ -12,7 +12,7 @@ def _deflate(my_dict: Dict, sep="_", root="", leave_tuples: bool = False, type_e
         if is_leaf(value) or leave_tuples and isinstance(value, tuple):
             yield (flatten_key, value)
         else:
-            for sub_key, sub_value in _deflate(encode_list(value) if isinstance(value, list) else value, sep=sep, root=flatten_key, type_encode_key=type_encode_key):
+            for sub_key, sub_value in _deflate(encode_list(value) if isinstance(value, list) else value, sep=sep, root=flatten_key, leave_tuples=leave_tuples, type_encode_key=type_encode_key):
                 yield (sub_key, sub_value)
 
 

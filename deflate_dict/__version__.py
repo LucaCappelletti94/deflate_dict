@@ -1,2 +1,2 @@
 """Current version of package deflate_dict"""
-__version__ = "1.0.7"
+__version__ = "1.0.8"
