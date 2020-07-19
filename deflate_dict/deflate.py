@@ -18,6 +18,10 @@ def _deflate(my_dict: Dict, sep="_", root="", leave_tuples: bool = False, type_e
 
 def deflate(my_dict: Dict, sep="_", root="", leave_tuples: bool = False, type_encode_key: bool = True) -> Dict:
     """Return deflated Dict."""
+    if not isinstance(my_dict, dict):
+        raise ValueError("Given object is not a dictionary but a {}.".format(
+            type(my_dict)
+        ))
     return dict(_deflate(
         my_dict,
         sep=sep,
