@@ -53,10 +53,33 @@ To reinflate a dictionary to its forgotten glory, just go with:
 
     # {'a': [{'b': (0, 1, 2)}, {'c': [1, 2, 3]}], 'd': 4}
 
-Limitations
+Handling and restoring mixed types
 ----------------------------------------------
-The library, as of version `1.0.2`, is unable to distinguish between reinflated numerical strings and actual numbers,
-since to deflate the strings the library has to convert the numbers to strings.
+To deflate and re-inflate mixed types and restore them to the original type
+you can use the `type_encode_key` keyword:
+
+.. code:: python
+
+    from deflate_dict import deflate
+
+    D = {
+        "a":[
+            {
+                "b":(0,1,2)
+            },
+            {
+                "c": [1,2,3]
+            }
+        ]
+    }
+
+    print(deflate(D, sep="_", type_encode_key=True))
+
+    # {
+    #    'str(a)_listIndex(0)_str(b)': (0, 1, 2),
+    #    'str(a)_listIndex(1)_str(c)': [1, 2, 3]
+    # }
+
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/deflate_dict.png
    :target: https://travis-ci.org/LucaCappelletti94/deflate_dict
@@ -86,7 +109,7 @@ since to deflate the strings the library has to convert the numbers to strings.
     :target: https://pepy.tech/badge/deflate-dict
     :alt: Pypi total project downloads 
 
-.. |codacy|  image:: https://api.codacy.com/project/badge/Grade/ac52bf2f95bc4f6590f65bac9bc7fc60
+.. |codacy| image:: https://api.codacy.com/project/badge/Grade/ac52bf2f95bc4f6590f65bac9bc7fc60
     :target: https://www.codacy.com/app/LucaCappelletti94/deflate_dict?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LucaCappelletti94/deflate_dict&amp;utm_campaign=Badge_Grade
     :alt: Codacy Maintainability
 
