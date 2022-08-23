@@ -1,7 +1,5 @@
 from typing import Dict
 from .is_leaf import is_leaf
-import sys
-import re
 from .utils import type_decode, is_encoded_list, decode_list
 
 
