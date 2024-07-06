@@ -1,9 +1,23 @@
-from .utils import is_iterable
+"""Module for determining if given node is a leaf."""
 
-def is_leaf(node)->bool:
-    """Return boolean representing whetever given node is a leaf: does not contain lists or dictionaries.
-        node, the element to determine if is leaf.
+from typing import Any
+from deflate_dict.utils import is_iterable
+
+
+def is_leaf(node: Any) -> bool:
+    """Returns whether given node is a leaf.
+    
+    Parameters
+    ----------
+    node : any
+        Element to determine if is leaf.
+
+    Implementative details
+    ----------------------
+    A leaf is a node that is not iterable or a dictionary that does not contain any iterable elements.
     """
-    return not is_iterable(node) or not isinstance(node, dict) and not any([
-        isinstance(e, (list, dict)) for e in node
-    ])
+    return (
+        not is_iterable(node)
+        or not isinstance(node, dict)
+        and not any(isinstance(e, (list, dict)) for e in node)
+    )

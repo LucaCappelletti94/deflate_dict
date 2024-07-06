@@ -1,10 +1,10 @@
-*/__pycache__/*
 \.vscode/
 
 .notipy.json
-**/__pycache__/*
 
 \.DS_Store
 
-*/__pycache__/*
 *.egg-info
+.coverage
+.pytest_cache
+__pycache__

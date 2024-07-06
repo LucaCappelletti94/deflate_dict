@@ -1,7 +1,5 @@
-from support_developer import support_luca
-from .deflate import deflate
-from .inflate import inflate
-
-support_luca("deflate_dict")
+"""Package for deflating and inflating dictionaries."""
+from deflate_dict.deflate import deflate
+from deflate_dict.inflate import inflate
 
 __all__ = ["deflate", "inflate"]
