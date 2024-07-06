@@ -34,7 +34,7 @@ D = {
 }
 result = deflate(D, sep="_")
 
-# {'a_0_b': (0, 1, 2), 'a_1_c': [1, 2, 3], 'd': 4}
+# {'str(a)_listIndex(0)_str(b)': (0, 1, 2), 'str(a)_listIndex(1)_str(c)': [1, 2, 3]}
 ```
 
 ## Inflate a dictionary
@@ -67,6 +67,13 @@ D = {
         }
     ]
 }
+
+print(deflate(D, sep="_", type_encode_key=False))
+
+# {
+# 'a_listIndex(0)_b': (0, 1, 2),
+# 'a_listIndex(1)_c': [1, 2, 3]
+# }
 
 print(deflate(D, sep="_", type_encode_key=True))
 
