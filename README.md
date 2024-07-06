@@ -4,9 +4,9 @@
 [![python](https://img.shields.io/pypi/pyversions/deflate-dict)](https://pypi.org/project/deflate-dict/)
 [![license](https://img.shields.io/pypi/l/deflate-dict)](https://pypi.org/project/deflate-dict/)
 [![downloads](https://pepy.tech/badge/deflate-dict)](https://pepy.tech/project/deflate-dict)
-[![Github Actions](https:://github.com/deflate-dict/deflate_dict/workflows/python/badge.svg)](https://github.com/LucaCappelletti94/deflate_dict/actions/)
+[![Github Actions](https:://github.com/deflate_dict/deflate_dict/workflows/python/badge.svg)](https://github.com/LucaCappelletti94/deflate_dict/actions/)
 
-Python package to deflate and re-inflate nested dictionaries.
+Python package to deflate 🌵 and re-inflate 🎈 nested dictionaries.
 
 ## How do I install this package?
 
