@@ -1,4 +1,4 @@
-# Deflate Dict
+# 🎈🌵 Deflate Dict
 
 [![pip](https://badge.fury.io/py/deflate-dict.svg)](https://pypi.org/project/deflate-dict/)
 [![python](https://img.shields.io/pypi/pyversions/deflate-dict)](https://pypi.org/project/deflate-dict/)
