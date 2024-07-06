@@ -21,7 +21,7 @@ def type_encode(my_object: Any) -> str:
     if classname == "tuple":
         my_object = ",".join([type_encode(e) for e in my_object])
         return f"{classname}({my_object})"
-    raise ValueError(f"Unable to encode object of type {classname}!")
+    raise NotImplementedError(f"Unable to encode object of type {classname}!")
 
 
 def type_decode(my_object: str) -> Any:
@@ -32,11 +32,18 @@ def type_decode(my_object: str) -> Any:
     my_object : str
         Object to decode from string.
     """
+    assert isinstance(my_object, str), "Input must be a string!"
+    assert "(" in my_object, "Invalid input, missing parentheses!"
+    assert ")" in my_object, "Invalid input, missing parentheses!"
+    assert len(my_object) > 2, "Invalid input, empty string!"
+
     pattern = re.compile(r"^(\w+)\((.+)\)$")
     results = pattern.findall(my_object)
     if not results:
-        # This happens only in the case of empty string "" being coded as str().
-        return ""
+        if my_object == "str()":
+            # This happens only in the case of empty string "" being coded as str().
+            return ""
+        raise AssertionError(f"Invalid empty string input: {my_object}")
     object_class, value = results[0]
     if object_class == "str":
         return value
@@ -50,4 +57,4 @@ def type_decode(my_object: str) -> Any:
         return tuple(type_decode(val) for val in value.split(","))
     if object_class == "listIndex":
         return my_object
-    raise ValueError(f"Class {object_class} is not currently supported!")
+    raise NotImplementedError(f"Class {object_class} is not currently supported!")
