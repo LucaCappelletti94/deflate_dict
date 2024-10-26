@@ -1,2 +1,2 @@
 include LICENSE
-include py.typed
+include deflate_dict/py.typed
