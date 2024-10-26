@@ -6,7 +6,7 @@ from deflate_dict.utils import is_iterable
 
 def is_leaf(node: Any) -> bool:
     """Returns whether given node is a leaf.
-    
+
     Parameters
     ----------
     node : any
@@ -14,7 +14,7 @@ def is_leaf(node: Any) -> bool:
 
     Implementative details
     ----------------------
-    A leaf is a node that is not iterable or a dictionary that does not contain any iterable elements.
+    A leaf is not iterable or a dict with no iterable elements.
     """
     return (
         not is_iterable(node)

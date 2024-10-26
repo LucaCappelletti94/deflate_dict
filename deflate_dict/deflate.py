@@ -13,7 +13,7 @@ def _deflate(
     type_encode_key: bool = True,
 ) -> Generator:
     """Return deflated Dict.
-    
+
     Parameters
     ----------
     my_dict : dict

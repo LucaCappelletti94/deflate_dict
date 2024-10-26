@@ -29,7 +29,7 @@ def encode_list(my_list: List) -> Dict:
     return {f"listIndex({key})": value for key, value in enumerate(my_list)}
 
 
-def is_encoded_list(candidate: List) -> bool:
+def is_encoded_list(candidate: Dict) -> bool:
     """Return boolean representing whetever given object is an encoded list.
 
     Parameters
@@ -40,7 +40,7 @@ def is_encoded_list(candidate: List) -> bool:
     return all(is_list_index(e) for e in candidate)
 
 
-def decode_list(my_list: Dict) -> Dict:
+def decode_list(my_list: Dict) -> List:
     """Decode a dictionary to a list.
 
     Parameters

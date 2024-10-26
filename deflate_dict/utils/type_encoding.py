@@ -26,7 +26,7 @@ def type_encode(my_object: Any) -> str:
 
 def type_decode(my_object: str) -> Any:
     """Decode an object from a string.
-    
+
     Parameters
     ----------
     my_object : str
@@ -55,6 +55,6 @@ def type_decode(my_object: str) -> Any:
         return float(value)
     if object_class == "tuple":
         return tuple(type_decode(val) for val in value.split(","))
-    if object_class == "listIndex":
+    if object_class in "listIndex":
         return my_object
     raise NotImplementedError(f"Class {object_class} is not currently supported!")

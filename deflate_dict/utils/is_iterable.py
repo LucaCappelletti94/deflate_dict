@@ -1,5 +1,7 @@
 """Module for checking iterability of objects."""
+
 from typing import Any
+
 
 def is_iterable(candidate: Any) -> bool:
     """Return boolean representing whetever given object is an iterable.
