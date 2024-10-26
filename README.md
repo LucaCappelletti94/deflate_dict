@@ -7,7 +7,6 @@
 [![mypy](https://github.com/LucaCappelletti94/deflate_dict/actions/workflows/mypy.yml/badge.svg)](https://github.com/LucaCappelletti94/deflate_dict/actions/)
 [![Github Actions](https://github.com/LucaCappelletti94/deflate_dict/actions/workflows/python.yml/badge.svg)](https://github.com/LucaCappelletti94/deflate_dict/actions/)
 
-
 Python package to deflate 🌵 and re-inflate 🎈 nested dictionaries.
 
 ## How do I install this package?
@@ -86,4 +85,5 @@ print(deflate(D, sep="_", type_encode_key=True))
 ```
 
 ## License
+
 This software is distributed under MIT license.

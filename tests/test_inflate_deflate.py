@@ -1,4 +1,5 @@
 """Test deflate and inflate functions."""
+
 from random_dict import random_int_dict, random_float_dict, random_string_dict
 from deflate_dict import inflate, deflate
 from .utils import test_dict
