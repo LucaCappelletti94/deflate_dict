@@ -25,4 +25,4 @@ jobs:
           pip install mypy  # Ensure mypy is installed
 
       - name: Run MyPy
-        run: mypy dict_hash/
+        run: mypy deflate_dict/
